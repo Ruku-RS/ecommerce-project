@@ -74,7 +74,7 @@ const Products = () => {
   });
 
   return (
-    <section className="max-w-[1300px] mx-auto px-12 py-10">
+    <section id="product-section" className="max-w-[1300px] mx-auto px-12 py-10">
       {/* Tabs */}
         <div className="flex gap-3 justify-center items-center mt-8">
         {categories.map((category) => {

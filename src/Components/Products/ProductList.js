@@ -10,7 +10,8 @@ import Skater from '../../assets/skater.png'
 import Sweater from '../../assets/sweater.png'
 import BabyShirt from '../../assets/baby-shirt.png'
 import ShirtDress from '../../assets/shirt-dress.png'
-
+import AirJordan from '../../assets/air-jordan.png'
+import CasualShoes from '../../assets/white-shoes.png'
 
 
 const product =[
@@ -134,6 +135,26 @@ const product =[
         NewArrival: false,
         category: 'Womens'
     },
+    {
+      id: 13,
+      name: 'Air Jordan',
+      image: AirJordan,
+      price: 100,
+      oldPrice: 150,
+      onSale: true,
+      NewArrival: false,
+      category: 'Mens'
+    },
+    {
+        id:14,
+        name: 'Casual Shoes',
+        image: CasualShoes,
+        price: 50,
+        oldPrice: 80,
+        onSale: false,
+        NewArrival: true,
+        category: ['Mens', 'Womens']
+    }
 ]
 
 export default product
