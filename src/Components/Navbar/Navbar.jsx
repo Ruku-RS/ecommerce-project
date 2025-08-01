@@ -5,7 +5,7 @@ import { GoHeartFill } from 'react-icons/go';
 import { HiShoppingBag } from 'react-icons/hi2';
 
 
-const Navbar = ({handleScroll}) => {
+const Navbar = ({handleScroll, setSearchTerm}) => {
   return (
     <header className='bg-white fixed top-0 left-0 right-0'>
         <nav className='h-[14vh] flex items-center justify-between max-w-[1300px] px-12 mx-auto '>
@@ -21,7 +21,9 @@ const Navbar = ({handleScroll}) => {
                 <div className='p-1 rounded-full border-2 border-blue-600 flex'>
                     <input type="text" name='search' id='search' placeholder='Search...' autoComplete='off' 
                     className=' h-[5vh] pl-4 flex-1 focus:outline-none'
-                    onFocus={handleScroll}/>
+                    onFocus={handleScroll} 
+                    onChange={(e)=>setSearchTerm(e.target.value)}/>
+                    
                     <button className='w-10 h-10 rounded-full bg-blue-600  text-white text-xl flex items-center justify-center'>
                         <IoSearch />
                     </button>

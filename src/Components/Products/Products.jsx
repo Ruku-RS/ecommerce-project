@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ProductList from "./ProductList";
 import { GoHeartFill } from "react-icons/go";
 
-const Products = () => {
+const Products = ({searchTerm}) => {
   const categories = [
     "All",
     "Mens",
@@ -19,7 +19,9 @@ const Products = () => {
     (activeTab === 'On Sale' && item.onSale) ||
     (activeTab === item.category)
 
-    return matchesCategory;
+    const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase());
+
+    return matchesCategory && matchesSearch;
   })
 
   const renderProducts = filteredItems.map((product) => {
@@ -96,7 +98,11 @@ const Products = () => {
 
       {/* Product Listing */}
         <div className="grid grid-cols-4 gap-9 mt-12">
-            {renderProducts}
+            {
+                filteredItems.length === 0 ? 
+                <p className="text-center col-span-4 text-zinc-800 text-lg"> No product found!</p> :
+                renderProducts
+            }
         </div>
     </section>
   );
