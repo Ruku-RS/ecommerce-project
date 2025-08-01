@@ -20,7 +20,7 @@ const product =[
         image: TShirt,
         price: 25.99,
         oldPrice: 35.99,
-        onSale: true,
+        onSale: false,
         NewArrival: true,
         category: 'Mens'
     },
@@ -72,7 +72,7 @@ const product =[
         oldPrice: 35.99,
         onSale: true,
         NewArrival: true,
-        category: 'Womens'
+        category: 'Kids'
     },
     {
         id: 7,
@@ -112,7 +112,7 @@ const product =[
         oldPrice: 35.99,
         onSale: true,
         NewArrival: true,
-        category: 'Mens'
+        category: 'Kids'
     },
     {
         id: 11,
