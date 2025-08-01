@@ -20,8 +20,8 @@ const product =[
         image: TShirt,
         price: 25.99,
         oldPrice: 35.99,
-        onSale: false,
-        NewArrival: true,
+        onSale: true,
+        NewArrival: false,
         category: 'Mens'
     },
     {
@@ -30,7 +30,7 @@ const product =[
         image: Jeans,
         price: 25.99,
         oldPrice: 35.99,
-        onSale: true,
+        onSale: false,
         NewArrival: true,
         category: 'Mens'
     },
@@ -41,7 +41,7 @@ const product =[
         price: 25.99,
         oldPrice: 35.99,
         onSale: true,
-        NewArrival: true,
+        NewArrival: null,
         category: 'Mens'
     },
     {
@@ -50,7 +50,7 @@ const product =[
         image: LeatherJacket,
         price: 25.99,
         oldPrice: 35.99,
-        onSale: true,
+        onSale: null,
         NewArrival: true,
         category: 'Mens'
     },
@@ -60,7 +60,7 @@ const product =[
         image: Skirt,
         price: 25.99,
         oldPrice: 35.99,
-        onSale: true,
+        onSale: false,
         NewArrival: true,
         category: 'Womens'
     },
@@ -70,8 +70,8 @@ const product =[
         image: Sleepsuit,
         price: 25.99,
         oldPrice: 35.99,
-        onSale: true,
-        NewArrival: true,
+        onSale: null,
+        NewArrival: false,
         category: 'Kids'
     },
     {
@@ -80,7 +80,7 @@ const product =[
         image: Shirt,
         price: 25.99,
         oldPrice: 35.99,
-        onSale: true,
+        onSale: false,
         NewArrival: true,
         category: 'Mens'
     },
@@ -91,7 +91,7 @@ const product =[
         price: 25.99,
         oldPrice: 35.99,
         onSale: true,
-        NewArrival: true,
+        NewArrival: false,
         category: 'Womens'
     },
     {
@@ -100,7 +100,7 @@ const product =[
         image: Skater,
         price: 25.99,
         oldPrice: 35.99,
-        onSale: true,
+        onSale: false,
         NewArrival: true,
         category: 'Womens'
     },
@@ -111,7 +111,7 @@ const product =[
         price: 25.99,
         oldPrice: 35.99,
         onSale: true,
-        NewArrival: true,
+        NewArrival: false,
         category: 'Kids'
     },
     {
@@ -120,7 +120,7 @@ const product =[
         image: BabyShirt,
         price: 25.99,
         oldPrice: 35.99,
-        onSale: true,
+        onSale: false,
         NewArrival: true,
         category: 'Kids'
     },
@@ -131,7 +131,7 @@ const product =[
         price: 25.99,
         oldPrice: 35.99,
         onSale: true,
-        NewArrival: true,
+        NewArrival: false,
         category: 'Womens'
     },
 ]
