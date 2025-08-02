@@ -2,6 +2,7 @@ import React, { useState ,useEffect} from 'react'
 import Navbar from '../Navbar/Navbar'
 import Banner from '../Banner/Banner'
 import Products from '../Products/Products'
+import Cart from '../Cart/Cart'
 
 const Home = () => {
 
@@ -27,15 +28,21 @@ const handleScroll = ()=>{
 
   return (
     <div>
+            {/* Navbar */}
             <Navbar 
             handleScroll={handleScroll}
             setSearchTerm={setSearchTerm}
             isScrolled={isScrolled}
             />
 
+            {/* Banner */}
             <Banner/>
 
+            {/* Product */}
             <Products searchTerm={searchTerm}/>
+
+            {/* Cart Tab */}
+            <Cart/>
     </div>
   )
 }
