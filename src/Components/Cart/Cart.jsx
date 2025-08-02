@@ -4,7 +4,7 @@ import { FaMinus, FaPlus, FaTrash } from 'react-icons/fa'
 
 const Cart = () => {
   return (
-    <div className='flex flex-col justify-between gap-5 bg-zinc-100 fixed top-0 right-0 bottom-0 z-40 left-auto w-[400px] border-l border-zinc-300 py-7'>
+    <div className='flex flex-col justify-between gap-5 bg-zinc-100 fixed top-0 right-0 bottom-0 z-40 left-auto w-[400px] border-l border-zinc-300 py-7 transform translate-x-full'>
     
      {/* Heading */}
       <div className='px-10'>

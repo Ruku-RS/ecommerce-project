@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar'
 import Banner from '../Banner/Banner'
 import Products from '../Products/Products'
 import Cart from '../Cart/Cart'
+import Wishlist from '../Wishlist/Wishlist'
 
 const Home = () => {
 
@@ -43,6 +44,9 @@ const handleScroll = ()=>{
 
             {/* Cart Tab */}
             <Cart/>
+
+            {/* Wishlist Tab */}
+            <Wishlist/>
     </div>
   )
 }
