@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import Navbar from '../Navbar/Navbar'
 import Banner from '../Banner/Banner'
 import Products from '../Products/Products'
@@ -6,6 +6,16 @@ import Products from '../Products/Products'
 const Home = () => {
 
     const [searchTerm, setSearchTerm] = useState('');
+      const [isScrolled, setIsScrolled] = useState('false');
+
+   useEffect(()=>{
+    const changeNavbar =()=>{
+        setIsScrolled(window.scrollY > 10)
+    }
+
+        window.addEventListener('scroll', changeNavbar);
+
+   },[])
 
 const handleScroll = ()=>{
     const section = document.getElementById('product-section');
@@ -20,10 +30,11 @@ const handleScroll = ()=>{
             <Navbar 
             handleScroll={handleScroll}
             setSearchTerm={setSearchTerm}
+            isScrolled={isScrolled}
             />
 
             <Banner/>
-            
+
             <Products searchTerm={searchTerm}/>
     </div>
   )
