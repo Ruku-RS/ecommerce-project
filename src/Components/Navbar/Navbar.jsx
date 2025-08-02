@@ -5,7 +5,7 @@ import { GoHeartFill } from 'react-icons/go';
 import { HiShoppingBag } from 'react-icons/hi2';
 
 
-const Navbar = ({handleScroll, setSearchTerm, isScrolled}) => {
+const Navbar = ({handleScroll, setSearchTerm, isScrolled, handlePanel}) => {
 
 
   return (
@@ -32,15 +32,18 @@ const Navbar = ({handleScroll, setSearchTerm, isScrolled}) => {
                 </div>
 
                 {/* Icons */}
-                <button className='text-[1.7rem] text-zinc-800 relative '>
+                <button className='text-[1.7rem] text-zinc-800 relative  cursor-pointer'
+                onClick={()=>handlePanel('wishlist')}>
                     <GoHeartFill/>
                     <span className='bg-red-600 text-white w-5 h-5 rounded-full text-[14px] flex justify-center items-center absolute top-4 right-3 border-2 border-white'>
                         1
                     </span>
                 </button>
-                <button className='text-[1.7rem] text-zinc-800 relative'>
+                <button className='text-[1.7rem] text-zinc-800 relative cursor-pointer'
+                onClick={()=>handlePanel('cart')}>
                     <HiShoppingBag/>
-                     <span className='bg-red-600 text-white w-5 h-5 rounded-full text-[14px] flex justify-center items-center absolute top-4 right-4 border-2 border-white'>
+                     <span className='bg-red-600 text-white w-5 h-5 rounded-full text-[14px] flex justify-center items-center absolute top-4 right-4 border-2 border-white'
+                     >
                         1
                     </span>
                 </button>

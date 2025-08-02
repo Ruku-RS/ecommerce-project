@@ -8,7 +8,8 @@ import Wishlist from '../Wishlist/Wishlist'
 const Home = () => {
 
     const [searchTerm, setSearchTerm] = useState('');
-      const [isScrolled, setIsScrolled] = useState('false');
+    const [isScrolled, setIsScrolled] = useState('false');
+    const [activePanel, setActivePanel] = useState(null);  
 
    useEffect(()=>{
     const changeNavbar =()=>{
@@ -19,12 +20,20 @@ const Home = () => {
 
    },[])
 
+//    Handle Scroll
 const handleScroll = ()=>{
     const section = document.getElementById('product-section');
 
     if(section){
         section.scrollIntoView({behavior: 'smooth'});
     }
+}
+
+// Cart and Wishlist Tab function
+const handlePanel = (tabName)=>{
+    setActivePanel(prev=>(
+        prev === tabName ? null : tabName
+    ))
 }
 
   return (
@@ -34,6 +43,7 @@ const handleScroll = ()=>{
             handleScroll={handleScroll}
             setSearchTerm={setSearchTerm}
             isScrolled={isScrolled}
+            handlePanel={handlePanel}
             />
 
             {/* Banner */}
@@ -43,10 +53,14 @@ const handleScroll = ()=>{
             <Products searchTerm={searchTerm}/>
 
             {/* Cart Tab */}
-            <Cart/>
+            <Cart
+            activePanel={activePanel}
+            />
 
             {/* Wishlist Tab */}
-            <Wishlist/>
+            <Wishlist
+            activePanel={activePanel}
+            />
     </div>
   )
 }
