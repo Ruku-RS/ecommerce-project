@@ -4,7 +4,7 @@ import Sweater from '../../assets/sweater.png'
 
 const Wishlist = ({activePanel}) => {
   return (
-     <div className={`flex flex-col justify-between gap-5 bg-zinc-100 fixed top-0 right-0 bottom-0 z-40 left-auto w-[400px] border-l border-zinc-300 py-7 transform transition-transform duration-300
+     <div className={`flex flex-col justify-between gap-5 bg-zinc-100 fixed top-0 right-0 bottom-0 z-40 left-auto w-[400px] border-l border-zinc-300 py-7 transform transition-transform duration-300 translate-x-0
      ${activePanel === 'wishlist' ? 'translate-x-0' : 'translate-x-full'} `}>
         
          {/* Heading */}
