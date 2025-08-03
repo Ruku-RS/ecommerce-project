@@ -46,6 +46,24 @@ const removeItem = (product)=>{
     setCart(cart.filter(item=> item.id !== product.id))
 }
 
+//QuantityIncrement
+const quantityIncrement =(product)=>{
+    setCart(cart.map(item=>
+        item.id === product.id ? 
+        {...item, quantity: item.quantity + 1} :
+        item
+    ))
+}
+
+//QuantityDecrement
+const quantityDecrement =(product)=>{
+    setCart(cart.map(item=>
+        item.id === product.id && item.quantity > 1 ? 
+        {...item, quantity: item.quantity - 1} :
+        item
+    ))
+}
+
 // AddToCart function
 const addToCart = (product)=>{
     const alreadyAdded = cart.find(item=>item.id === product.id);
@@ -54,7 +72,7 @@ const addToCart = (product)=>{
         return;
     }
 
-   setCart([...cart, product]);
+   setCart([...cart, {...product, quantity: 1}]);
 }
 
   return (
@@ -82,6 +100,8 @@ const addToCart = (product)=>{
             handleClose ={handleClose}
             cart={cart}
             removeItem={removeItem}
+            quantityIncrement={quantityIncrement}
+            quantityDecrement={quantityDecrement}
             />
 
             {/* Wishlist Tab */}
