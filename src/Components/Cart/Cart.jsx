@@ -1,7 +1,7 @@
 import React from "react";
 import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 
-const Cart = ({ activePanel, handleClose, cart, removeItem, quantityIncrement, quantityDecrement, subTotal}) => {
+const Cart = ({ activePanel, handleClose, cart, removeItem, quantityIncrement, quantityDecrement, subTotal, shippingFee, orderTotal}) => {
   return (
     <div
       className={`flex flex-col justify-between gap-5 bg-zinc-100 fixed top-0 right-0 bottom-0 z-40 left-auto w-[400px] border-l border-zinc-300 py-7 transform transition-transform duration-300 
@@ -86,11 +86,11 @@ const Cart = ({ activePanel, handleClose, cart, removeItem, quantityIncrement, q
         </div>
         <div className="flex justify-between py-2">
           <span className="text-zinc-800">Shipping & Handling</span>
-          <span className="text-zinc-800">$0.00</span>
+          <span className="text-zinc-800">${shippingFee.toFixed(2)}</span>
         </div>
         <div className="flex justify-between py-2 border-t border-zinc-300">
           <span className="text-blue-600 text-lg font-bold ">Order Total</span>
-          <span className="text-blue-600 text-lg font-bold">$0.00</span>
+          <span className="text-blue-600 text-lg font-bold">${orderTotal.toFixed(2)}</span>
         </div>
       </div>
 

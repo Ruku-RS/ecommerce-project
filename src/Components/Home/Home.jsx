@@ -15,7 +15,9 @@ const Home = () => {
 
 // Total Calculations
 const subTotal = cart.reduce((acc, item)=>acc + item.price * item.quantity ,0);
-const totalItems = cart.reduce((acc, item)=> acc + item.quantity, 0)
+const totalItems = cart.reduce((acc, item)=> acc + item.quantity, 0);
+const shippingFee = totalItems * 2;
+const orderTotal = subTotal + shippingFee;
 
    useEffect(()=>{
     const changeNavbar =()=>{
@@ -108,6 +110,8 @@ const addToCart = (product)=>{
             quantityIncrement={quantityIncrement}
             quantityDecrement={quantityDecrement}
             subTotal={subTotal}
+            shippingFee={shippingFee}
+            orderTotal={orderTotal}
             />
 
             {/* Wishlist Tab */}
