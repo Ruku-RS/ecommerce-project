@@ -98,8 +98,11 @@ const addToWishlist = (product) =>{
         const addedDate = new Date().toLocaleDateString('en-GB');
         setWishlist([...wishlist, {...product, addedDate}]);
     }
-    
+}
 
+//Clear Wishlist
+const clearWishlist = ()=>{
+    setWishlist([]);
 }
 
   return (
@@ -145,6 +148,7 @@ const addToWishlist = (product) =>{
       handleClose={handleClose} 
       wishlist={wishlist}
       addToCart={addToCart}
+      clearWishlist={clearWishlist}
       />
 
       {/* Order Summary */}
