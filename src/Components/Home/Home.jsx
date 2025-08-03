@@ -15,6 +15,7 @@ const Home = () => {
   const [cart, setCart] = useState([]);
   const [orderSummary, setOrderSummary] = useState(false);
   const [orderPlaced, setOrderPlaced] = useState(false);
+  const  [wishlist, setWishlist] = useState([]);
 
 
   // Total Calculations
@@ -87,6 +88,20 @@ const Home = () => {
     setCart([...cart, { ...product, quantity: 1 }]);
   };
 
+//   Wishlist function
+const addToWishlist = (product) =>{
+    const isInWishlist = wishlist.some(item=> item.id === product.id);
+    if(isInWishlist){
+        setWishlist(wishlist.filter(item=> item.id !== product.id))
+    }
+    else{
+        const addedDate = new Date().toLocaleDateString('en-GB');
+        setWishlist([...wishlist, {...product, addedDate}]);
+    }
+    
+
+}
+
   return (
     <div>
       {/* Navbar */}
@@ -96,13 +111,19 @@ const Home = () => {
         isScrolled={isScrolled}
         handlePanel={handlePanel}
         totalItems={totalItems}
+        wishlist={wishlist}
       />
 
       {/* Banner */}
       <Banner />
 
       {/* Product */}
-      <Products searchTerm={searchTerm} addToCart={addToCart} />
+      <Products 
+      searchTerm={searchTerm} 
+      addToCart={addToCart} 
+      addToWishlist={addToWishlist}
+      wishlist={wishlist}
+      />
 
       {/* Cart Tab */}
       <Cart
@@ -119,7 +140,11 @@ const Home = () => {
       />
 
       {/* Wishlist Tab */}
-      <Wishlist activePanel={activePanel} handleClose={handleClose} />
+      <Wishlist 
+      activePanel={activePanel} 
+      handleClose={handleClose} 
+      wishlist={wishlist}
+      />
 
       {/* Order Summary */}
       {orderSummary && (
