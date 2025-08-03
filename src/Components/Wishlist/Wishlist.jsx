@@ -2,10 +2,10 @@ import React from 'react'
 import Sweater from '../../assets/sweater.png'
 
 
-const Wishlist = ({activePanel}) => {
+const Wishlist = ({activePanel, handleClose}) => {
   return (
      <div className={`flex flex-col justify-between gap-5 bg-zinc-100 fixed top-0 right-0 bottom-0 z-40 left-auto w-[400px] border-l border-zinc-300 py-7 transform transition-transform duration-300 translate-x-0
-     ${activePanel === 'wishlist' ? 'translate-x-0' : 'translate-x-full'} `}>
+     ${activePanel === 'wishlist' ? 'translate-x-0' : 'translate-x-full'}`}>
         
          {/* Heading */}
           <div className='px-10'>
@@ -45,7 +45,8 @@ const Wishlist = ({activePanel}) => {
          
           {/* Button */}
           <div className='flex gap-x-2 px-10 '>
-            <button className='bg-blue-600 text-white flex-1 h-[7vh] cursor-pointer active:bg-blue-700'>
+            <button className='bg-blue-600 text-white flex-1 h-[7vh] cursor-pointer active:bg-blue-700'
+            onClick={handleClose}>
                 Close
             </button>
             <button className='bg-blue-600 text-white flex-1 h-[7vh] cursor-pointer active:bg-blue-700'>

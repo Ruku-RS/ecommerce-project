@@ -29,12 +29,15 @@ const handleScroll = ()=>{
     }
 }
 
-// Cart and Wishlist Tab function
+// Cart and Wishlist ShowPanel function
 const handlePanel = (tabName)=>{
     setActivePanel(prev=>(
         prev === tabName ? null : tabName
     ))
 }
+
+//Close Panel function
+const handleClose = ()=> setActivePanel(null)
 
   return (
     <div>
@@ -55,11 +58,13 @@ const handlePanel = (tabName)=>{
             {/* Cart Tab */}
             <Cart
             activePanel={activePanel}
+            handleClose ={handleClose}
             />
 
             {/* Wishlist Tab */}
             <Wishlist
             activePanel={activePanel}
+            handleClose ={handleClose}
             />
     </div>
   )
