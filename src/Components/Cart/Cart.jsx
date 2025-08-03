@@ -1,7 +1,7 @@
 import React from "react";
 import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 
-const Cart = ({ activePanel, handleClose, cart }) => {
+const Cart = ({ activePanel, handleClose, cart, removeItem }) => {
   return (
     <div
       className={`flex flex-col justify-between gap-5 bg-zinc-100 fixed top-0 right-0 bottom-0 z-40 left-auto w-[400px] border-l border-zinc-300 py-7 transform transition-transform duration-300 
@@ -36,7 +36,8 @@ const Cart = ({ activePanel, handleClose, cart }) => {
                   <h4 className="font-semibold text-zinc-800 text-lg">
                     {product.name}
                   </h4>
-                  <button className="w-8 h-8 bg-red-600 rounded-full text-white flex justify-center items-center mr-[27px]">
+                  <button className="w-8 h-8 bg-red-600 rounded-full text-white flex justify-center items-center mr-[27px] cursor-pointer active:bg-red-700"
+                  onClick={()=>removeItem(product)}>
                     <FaTrash />
                   </button>
                 </div>

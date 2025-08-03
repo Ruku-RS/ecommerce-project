@@ -41,9 +41,20 @@ const handlePanel = (tabName)=>{
 //Close Panel function
 const handleClose = ()=> setActivePanel(null);
 
+//Remove Item
+const removeItem = (product)=>{
+    setCart(cart.filter(item=> item.id !== product.id))
+}
+
 // AddToCart function
 const addToCart = (product)=>{
-   setCart([...cart, product])
+    const alreadyAdded = cart.find(item=>item.id === product.id);
+    if(alreadyAdded){
+        alert('Item is already in the cart!');
+        return;
+    }
+
+   setCart([...cart, product]);
 }
 
   return (
@@ -70,6 +81,7 @@ const addToCart = (product)=>{
             activePanel={activePanel}
             handleClose ={handleClose}
             cart={cart}
+            removeItem={removeItem}
             />
 
             {/* Wishlist Tab */}
