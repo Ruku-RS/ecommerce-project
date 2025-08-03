@@ -1,6 +1,13 @@
 import React from 'react'
 
-const OrderSummary = ({cart, subTotal,shippingFee, orderTotal}) => {
+const OrderSummary = ({cart, subTotal,shippingFee, orderTotal, setOrderPlaced, setOrderSummary, setCart}) => {
+
+    const handlePlaceOrder = () =>{
+        setOrderSummary(false);
+        setOrderPlaced(true);
+        setCart([])
+    }
+
   return (
    <section className='flex justify-center items-center bg-black/95 fixed inset-0 z-40'>
     <div className='bg-zinc-100 p-8 w-[600px] rounded-lg border-1 border-zinc-300'>
@@ -62,7 +69,8 @@ const OrderSummary = ({cart, subTotal,shippingFee, orderTotal}) => {
             <button className='bg-zinc-800 flex-1 py-3 active:bg-zinc-900 text-white rounded-lg cursor-pointer '>
             Close
         </button>
-        <button className='bg-blue-600 flex-1 py-3 active:bg-blue-700 text-white rounded-lg cursor-pointer '>
+        <button className='bg-blue-600 flex-1 py-3 active:bg-blue-700 text-white rounded-lg cursor-pointer '
+        onClick={handlePlaceOrder}>
             Place Order
         </button>
         </div>

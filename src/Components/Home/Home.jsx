@@ -6,6 +6,7 @@ import Cart from "../Cart/Cart";
 import Wishlist from "../Wishlist/Wishlist";
 import product from "../Products/ProductList";
 import OrderSummary from "../OrderSummary/OrderSummary";
+import OrderPlaced from "../OrderPlaced/OrderPlaced";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -13,6 +14,8 @@ const Home = () => {
   const [activePanel, setActivePanel] = useState(null);
   const [cart, setCart] = useState([]);
   const [orderSummary, setOrderSummary] = useState(false);
+  const [orderPlaced, setOrderPlaced] = useState(false);
+
 
   // Total Calculations
   const subTotal = cart.reduce(
@@ -125,8 +128,21 @@ const Home = () => {
           subTotal={subTotal}
           shippingFee={shippingFee}
           orderTotal={orderTotal}
+          setOrderPlaced={setOrderPlaced}
+          setOrderSummary={setOrderSummary}
+          setCart={setCart}
         />
       )}
+
+      {/* Order Placed */}
+      {
+        orderPlaced &&
+        (
+            <OrderPlaced
+            setOrderPlaced={setOrderPlaced}
+            />
+        )
+      }
     </div>
   );
 };
