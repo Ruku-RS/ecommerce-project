@@ -13,6 +13,10 @@ const Home = () => {
     const [activePanel, setActivePanel] = useState(null);  
     const [cart, setCart] = useState([]);
 
+// Total Calculations
+const subTotal = cart.reduce((acc, item)=>acc + item.price * item.quantity ,0);
+const totalItems = cart.reduce((acc, item)=> acc + item.quantity, 0)
+
    useEffect(()=>{
     const changeNavbar =()=>{
         setIsScrolled(window.scrollY > 10)
@@ -83,6 +87,7 @@ const addToCart = (product)=>{
             setSearchTerm={setSearchTerm}
             isScrolled={isScrolled}
             handlePanel={handlePanel}
+            totalItems={totalItems}
             />
 
             {/* Banner */}
@@ -102,6 +107,7 @@ const addToCart = (product)=>{
             removeItem={removeItem}
             quantityIncrement={quantityIncrement}
             quantityDecrement={quantityDecrement}
+            subTotal={subTotal}
             />
 
             {/* Wishlist Tab */}
