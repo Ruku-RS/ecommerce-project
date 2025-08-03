@@ -4,12 +4,14 @@ import Banner from '../Banner/Banner'
 import Products from '../Products/Products'
 import Cart from '../Cart/Cart'
 import Wishlist from '../Wishlist/Wishlist'
+import product from '../Products/ProductList'
 
 const Home = () => {
 
     const [searchTerm, setSearchTerm] = useState('');
     const [isScrolled, setIsScrolled] = useState('false');
     const [activePanel, setActivePanel] = useState(null);  
+    const [cart, setCart] = useState([]);
 
    useEffect(()=>{
     const changeNavbar =()=>{
@@ -37,7 +39,12 @@ const handlePanel = (tabName)=>{
 }
 
 //Close Panel function
-const handleClose = ()=> setActivePanel(null)
+const handleClose = ()=> setActivePanel(null);
+
+// AddToCart function
+const addToCart = (product)=>{
+   setCart([...cart, product])
+}
 
   return (
     <div>
@@ -53,12 +60,16 @@ const handleClose = ()=> setActivePanel(null)
             <Banner/>
 
             {/* Product */}
-            <Products searchTerm={searchTerm}/>
+            <Products 
+            searchTerm={searchTerm}
+            addToCart={addToCart}
+            />
 
             {/* Cart Tab */}
             <Cart
             activePanel={activePanel}
             handleClose ={handleClose}
+            cart={cart}
             />
 
             {/* Wishlist Tab */}
