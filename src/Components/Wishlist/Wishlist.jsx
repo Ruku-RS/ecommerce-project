@@ -1,4 +1,4 @@
-const Wishlist = ({ activePanel, handleClose, wishlist }) => {
+const Wishlist = ({ activePanel, handleClose, wishlist, addToCart }) => {
   return (
     <div
       className={`flex flex-col justify-between gap-5 bg-zinc-100 fixed top-0 right-0 bottom-0 z-40 left-auto w-[400px] border-l border-zinc-300 py-7 transform transition-transform duration-300 translate-x-0
@@ -50,7 +50,8 @@ const Wishlist = ({ activePanel, handleClose, wishlist }) => {
                         ${product.price.toFixed(2)}
                       </span>
                     </div>
-                    <button className="bg-blue-600 text-white text-sm px-5 py-[5px] rounded-full active:bg-blue-700 cursor-pointer  ">
+                    <button className="bg-blue-600 text-white text-sm px-5 py-[5px] rounded-full active:bg-blue-700 cursor-pointer"
+                    onClick={()=>addToCart(product)}>
                       Add to Cart
                     </button>
                   </div>

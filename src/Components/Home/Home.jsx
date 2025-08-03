@@ -144,6 +144,7 @@ const addToWishlist = (product) =>{
       activePanel={activePanel} 
       handleClose={handleClose} 
       wishlist={wishlist}
+      addToCart={addToCart}
       />
 
       {/* Order Summary */}
