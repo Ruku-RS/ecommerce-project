@@ -66,8 +66,9 @@ const OrderSummary = ({cart, subTotal,shippingFee, orderTotal, setOrderPlaced, s
         
         {/* Buttons */}
         <div className='flex mt-10 gap-x-3'>
-            <button className='bg-zinc-800 flex-1 py-3 active:bg-zinc-900 text-white rounded-lg cursor-pointer '>
-            Close
+            <button className='bg-zinc-800 flex-1 py-3 active:bg-zinc-900 text-white rounded-lg cursor-pointer'
+            onClick={()=>setOrderSummary(false)}>
+            Cancel
         </button>
         <button className='bg-blue-600 flex-1 py-3 active:bg-blue-700 text-white rounded-lg cursor-pointer '
         onClick={handlePlaceOrder}>
