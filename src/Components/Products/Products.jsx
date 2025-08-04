@@ -27,7 +27,7 @@ const Products = ({searchTerm, addToCart, addToWishlist, wishlist}) => {
   const renderProducts = filteredItems.map((product) => {
     return (
       //Card
-      <div className="bg-zinc-100 rounded-lg p-5 border-1 border-zinc-300 ">
+      <div key={product.id} className="bg-zinc-100 rounded-lg p-5 border-1 border-zinc-300 ">
         <div className="flex justify-between items-center">
           <button className={`text-3xl cursor-pointer
           ${wishlist.some(item=> item.id === product.id) ? 'text-red-600' : 'text-zinc-300'}`}
