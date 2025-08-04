@@ -4,7 +4,11 @@ import BannerImage from '../../assets/banner.jpg'
 const Banner = () => {
 
     const initialTime = 5 * 60 * 60;
-    const [timeLeft, setTimeLeft] =useState(initialTime);
+    const [timeLeft, setTimeLeft] =useState(()=>{
+        const storeTime = localStorage.getItem('remainingTime');
+        return storeTime && parseInt(storeTime, 10) > 0 ? 
+        parseInt(storeTime, 10) : initialTime
+    });
 
     const formatTime = (time)=>{
 
@@ -15,9 +19,11 @@ const Banner = () => {
                 setTimeLeft(prev=>{
                     if(prev <= 1){
                     clearInterval(timer);
+                    localStorage.setItem('remainingTime', 0)
                     return 0;
                 }
                     const remainingTime = prev - 1
+                    localStorage.setItem('remainingTime', remainingTime)
                     return remainingTime;
                 })
 
